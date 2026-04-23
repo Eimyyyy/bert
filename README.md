@@ -13,7 +13,7 @@ requirements.txt
 - **拆分后训练集**：863 (80%)
 - **验证集**：216 (20%)
 - **测试集**：717
-## 2.2 参数
+## 2.2 架构参数
 | 参数名称 | 数值 | 说明 |
 | :--- | :--- | :--- |
 | **vocab_size** | 动态 | 由预处理生成的 `word_to_idx` 词典长度决定 |
@@ -22,3 +22,11 @@ requirements.txt
 | **n_layers** | **6** | Transformer Encoder Block 的堆叠层数 |
 | **attn_heads** | **8** | 多头自注意力机制的头数 ($d_k = 32$) |
 | **dropout** | **0.1** | Transformer 内部层、注意力权重、嵌入层的丢弃率 |
+## 2.3 超参数
+| 参数名称 | 数值 | 说明 |
+| :--- | :--- | :--- |
+| **batch_size** | **16** | 训练批次大小 |
+| **learning_rate** | **1e-4** | 初始学习率 (Adam Optimizer) |
+| **max_epochs** | **100** | 最大迭代轮数（配合早停机制使用） |
+| **loss_func** | `CrossEntropyLoss` | 交叉熵损失函数 |
+| **device** | `cuda` / `cpu` | 优先使用 GPU 加速训练 |
